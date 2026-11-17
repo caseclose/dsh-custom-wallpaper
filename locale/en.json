@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Custom wallpaper",
+    "description": "Custom background wallpaper for the Harness Web UI. Settings → General → Custom wallpaper lets you pick from the built-in image library or an image URL and adjust fit, focus, opacity, scrim, blur with a live preview and presets; a full form is also available under Settings → Plugins. Values live in the official settings document, survive restarts, and apply immediately. Library images are served same-origin; only custom URLs make network requests."
+  }
+}

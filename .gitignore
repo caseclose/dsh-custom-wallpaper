@@ -1,0 +1,15 @@
+# User-supplied wallpapers must never be committed to a public repo.
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.webp
+assets/*.avif
+assets/*.gif
+!assets/default.svg
+
+# Local catalog (may contain personal file names / source URLs)
+wallpaper-catalog.json
+
+node_modules/
+*.tgz
+.DS_Store
