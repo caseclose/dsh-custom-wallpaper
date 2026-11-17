@@ -30,7 +30,7 @@
     "wallpaper-catalog.example.json",
     "LICENSE",
     "README.md",
-    "docs/settings-preview.svg"
+    "docs/settings-preview.webp"
   ],
   "scripts": {
     "build": "python3 tools/build-client.py",
