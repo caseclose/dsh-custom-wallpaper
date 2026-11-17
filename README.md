@@ -2,106 +2,95 @@
 
 [![CI](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml)
 
-A configurable custom wallpaper plugin for the **DeepSeek Harness** Web UI.
+简体中文 | [English](README.en.md)
 
-Set any image as the background behind the whole app, with a live-preview
-settings row, a grouped wallpaper picker, presets and per-theme veil colours.
+给 **DeepSeek Harness** 网页界面使用的自定义壁纸插件。
 
-![Settings row preview](docs/settings-preview.webp)
+把任意图片设为整个应用背后的背景，带实时预览的设置行、分组壁纸选择器、预设方案，以及随主题自动切换的纱帘颜色。
 
-*Actual settings row in DeepSeek Harness, shown with a sample wallpaper.*
+![设置行截图](docs/settings-preview.webp)
 
-> ⚠️ **No wallpaper files are bundled.** The only image shipped in `assets/` is
-> `assets/default.svg`, an original placeholder. You supply the wallpapers
-> yourself — see [Adding wallpapers](#adding-wallpapers). Do not commit
-> copyrighted game art or downloaded stock photos to a public fork.
-> The screenshot above includes a sample wallpaper used only to illustrate the
-> UI; that artwork belongs to its respective rights holder and no such image
-> file is distributed in this repository.
+*DeepSeek Harness 中真实的设置行界面，展示时使用了示例壁纸。*
 
-## Features
+> ⚠️ **仓库不附带任何壁纸文件。** `assets/` 里唯一的图片是原创占位图
+> `assets/default.svg`。壁纸需要你自己放 —— 见[添加壁纸](#添加壁纸)。请勿把
+> 受版权保护的游戏美术或下载的图库照片提交到公开仓库。
+> 上面的截图包含一张仅用于说明界面的示例壁纸，其权利归原作者所有，本仓库不
+> 分发该图片文件。
 
-- **One shared configuration**: a single image and one set of values for both
-  light and dark themes. CSS switches the veil / surface colours automatically
-  (white veil in light mode, black veil in dark mode); no duplicate settings.
-- **Image sources**: a local library (`assets/`, grouped dropdown) or any image URL.
-- **Display**: `cover` / `contain` / fixed pixel width, plus X/Y focus.
-- **Appearance**: wallpaper opacity, readability scrim, panel translucency,
-  wallpaper blur and frosted-glass blur.
-- **Presets**: Original / Soft / Clear / Eye care, or Custom.
-- Settings persist in DSH's official settings document, survive restarts and
-  apply immediately (`.volatile()` fields).
+## 功能
 
-## Install
+- **一套配置**：深浅主题共用同一张图和同一组参数。CSS 自动切换纱帘与面板底色
+  （浅色白纱、深色黑纱），没有重复设置。
+- **图片来源**：本地图库（`assets/`，分组下拉）或任意图片 URL。
+- **显示方式**：`cover` / `contain` / 固定像素宽度，外加 X/Y 取景。
+- **观感**：壁纸不透明度、可读性遮罩、面板半透明度、壁纸模糊、毛玻璃模糊。
+- **预设**：原版 / 淡雅 / 清晰 / 护眼，或自定义。
+- 配置保存在 DSH 官方设置文档中，跨重启保留，改动即时生效（`.volatile()` 字段）。
 
-This plugin is distributed **from this Git repository only** — it is not
-published to npm. Install straight from GitHub (pin a commit; DSH runs a
-git-hosted bundle's build step at install time, so pinning keeps that code
-stable):
+## 安装
+
+本插件**仅通过本 Git 仓库分发**，未发布到 npm。直接从 GitHub 安装（建议锁定
+commit：DSH 会在安装时执行 git 包的构建步骤，锁定可保证运行的代码不变）：
 
 ```sh
 dsh plugin --profile web add github:caseclose/dsh-custom-wallpaper#8018ee4
 ```
 
-Or clone and install from a local directory:
+或克隆后从本地目录安装：
 
 ```sh
 git clone https://github.com/caseclose/dsh-custom-wallpaper.git
 dsh plugin --profile web add /path/to/dsh-custom-wallpaper
 ```
 
-Replace `8018ee4` with a newer `git rev-parse HEAD` value if you want a later
-revision. Then reload the Web page. Configure it in
-**Settings → General → Custom wallpaper** (or **Settings → Plugins** for the
-generated full form).
+想要更新的版本，把 `8018ee4` 换成 `git rev-parse HEAD` 的结果。之后刷新网页即可。
+在 **设置 → 通用 → 自定义壁纸** 中配置（或到 **设置 → 插件** 使用自动生成的
+完整表单）。
 
-## Adding wallpapers
+## 添加壁纸
 
-1. Put your images in `assets/` (JPG / PNG / WebP / AVIF / SVG).
-2. Run `python3 tools/build-client.py` (or `npm run build`).
-3. Reload the page — new files appear in the picker.
+1. 把图片放进 `assets/`（JPG / PNG / WebP / AVIF / SVG）。
+2. 运行 `python3 tools/build-client.py`（或 `npm run build`）。
+3. 刷新页面 —— 新文件会出现在选择器里。
 
-Entries are derived by scanning `assets/` at build time. For nicer labels and
-custom groups, copy `wallpaper-catalog.example.json` to
-`wallpaper-catalog.json` and edit it. Both files are metadata only; neither
-contains images.
+选项在构建时扫描 `assets/` 自动生成。想要更好看的标签和自定义分组，把
+`wallpaper-catalog.example.json` 复制为 `wallpaper-catalog.json` 再编辑。两者都
+只是元数据，不含图片。
 
-## Configuration
+## 配置项
 
-| Field | Meaning |
+| 字段 | 含义 |
 |---|---|
-| `enabled` | Remove the wallpaper and all overrides when off |
+| `enabled` | 关闭后移除壁纸及所有覆盖样式 |
 | `preset` | `original` / `soft` / `clear` / `eyeCare` / `custom` |
 | `imageSource` | `library` / `url` |
-| `imageUrl`, `assetName` | URL or library file name |
+| `imageUrl`, `assetName` | 图片地址或图库文件名 |
 | `fit` | `fixed` / `cover` / `contain` |
-| `fixedWidth`, `positionX`, `positionY` | Size and focus |
-| `opacity`, `scrim`, `panelAlpha` | Wallpaper / veil / panel strength |
-| `wallpaperBlur`, `glassBlur` | Optional blur effects |
+| `fixedWidth`, `positionX`, `positionY` | 尺寸与取景 |
+| `opacity`, `scrim`, `panelAlpha` | 壁纸 / 纱帘 / 面板强度 |
+| `wallpaperBlur`, `glassBlur` | 可选模糊效果 |
 
-## Development
+## 开发
 
 ```sh
-python3 tools/build-client.py   # regenerate client.js
-node tools/smoke-test.cjs       # headless checks
-npm pack --dry-run              # verify the package contents
+python3 tools/build-client.py   # 重新生成 client.js
+node tools/smoke-test.cjs       # 无头检查
+npm pack --dry-run              # 检查包内容
 ```
 
-`tools/client-template.js` is the source of the browser module;
-`tools/build-client.py` injects the dictionaries and the asset list into it.
-The Host half is `index.js` (Config schema), activated by `cordis.patch.yml`.
+`tools/client-template.js` 是浏览器模块的源文件，`tools/build-client.py` 把字典
+和图库清单注入其中。Host 半部是 `index.js`（Config schema），由
+`cordis.patch.yml` 激活。
 
-## Copyright
+## 版权
 
-- Plugin code: MIT, see [LICENSE](LICENSE).
-- `icon.svg` and `assets/default.svg`: original artwork for this project.
-- `docs/settings-preview.webp`: a screenshot of the plugin's settings row. It
-  contains a sample wallpaper (game artwork) visible only as part of that UI
-  capture; rights remain with the owner and no such image file is shipped here.
-- Wallpapers you add: whatever license **you** hold. Game artwork (e.g.
-  Wuthering Waves © KURO GAMES, Honkai: Star Rail © miHoYo / HoYoverse) and
-  stock photos are **not** covered by this repository's license and are not
-  distributed here.
+- 插件代码：MIT，见 [LICENSE](LICENSE)。
+- `icon.svg` 与 `assets/default.svg`：本项目原创美术。
+- `docs/settings-preview.webp`：插件设置行截图，其中作为界面的一部分出现了一张
+  示例壁纸（游戏美术）；权利归原作者，本仓库不分发该图片文件。
+- 你自行添加的壁纸：遵循**你自己**持有的授权。游戏美术（例如《鸣潮》
+  © KURO GAMES、《崩坏：星穹铁道》© miHoYo / HoYoverse）与图库照片不受本仓库
+  许可证覆盖，也不在此分发。
 
-Third-party rights remain with their respective owners. Use such images only
-in ways their own terms allow.
+第三方权利归各自所有者所有，请仅在其条款允许的范围内使用。

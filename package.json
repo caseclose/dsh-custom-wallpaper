@@ -30,6 +30,7 @@
     "wallpaper-catalog.example.json",
     "LICENSE",
     "README.md",
+    "README.en.md",
     "docs/settings-preview.webp"
   ],
   "scripts": {
