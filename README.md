@@ -31,19 +31,24 @@ settings row, a grouped wallpaper picker, presets and per-theme veil colours.
 
 ## Install
 
-From npm (after publishing):
+This plugin is distributed **from this Git repository only** — it is not
+published to npm. Install straight from GitHub (pin a commit; DSH runs a
+git-hosted bundle's build step at install time, so pinning keeps that code
+stable):
 
 ```sh
-dsh plugin --profile web add dsh-wallpaper-custom
+dsh plugin --profile web add github:caseclose/dsh-custom-wallpaper#8018ee4
 ```
 
-From a local checkout:
+Or clone and install from a local directory:
 
 ```sh
-dsh plugin --profile web add /path/to/dsh-wallpaper-custom
+git clone https://github.com/caseclose/dsh-custom-wallpaper.git
+dsh plugin --profile web add /path/to/dsh-custom-wallpaper
 ```
 
-Then reload the Web page. Configure it in
+Replace `8018ee4` with a newer `git rev-parse HEAD` value if you want a later
+revision. Then reload the Web page. Configure it in
 **Settings → General → Custom wallpaper** (or **Settings → Plugins** for the
 generated full form).
 
@@ -75,8 +80,8 @@ contains images.
 
 ```sh
 python3 tools/build-client.py   # regenerate client.js
-node tools/smoke-test.js        # headless checks
-npm pack --dry-run              # inspect the publishable tarball
+node tools/smoke-test.cjs       # headless checks
+npm pack --dry-run              # verify the package contents
 ```
 
 `tools/client-template.js` is the source of the browser module;
