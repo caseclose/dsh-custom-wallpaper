@@ -11,7 +11,7 @@ settings row, a grouped wallpaper picker, presets and per-theme veil colours.
 
 ![Settings row preview](docs/settings-preview.webp)
 
-*Actual settings row in DeepSeek Harness, shown with a sample wallpaper.*
+*Custom wallpaper in DeepSeek Harness → Settings → General, shown with a sample wallpaper.*
 
 > ⚠️ **No wallpaper files are bundled.** The only image shipped in `assets/` is
 > `assets/default.svg`, an original placeholder. You supply the wallpapers

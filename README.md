@@ -10,7 +10,7 @@
 
 ![设置行截图](docs/settings-preview.webp)
 
-*DeepSeek Harness 中真实的设置行界面，展示时使用了示例壁纸。*
+*DeepSeek Harness「设置 → 通用设置」中的自定义壁纸，展示时使用了示例壁纸。*
 
 > ⚠️ **仓库不附带任何壁纸文件。** `assets/` 里唯一的图片是原创占位图
 > `assets/default.svg`。壁纸需要你自己放 —— 见[添加壁纸](#添加壁纸)。请勿把
