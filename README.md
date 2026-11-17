@@ -1,19 +1,19 @@
-# dsh-custom-wallpaper
+# dsh-wallpaper-custom
 
 [![CI](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml)
 
-简体中文 | [English](README.en.md)
+简体中文 | [English](https://github.com/caseclose/dsh-custom-wallpaper/blob/main/README.en.md)
 
 给 **DeepSeek Harness** 网页界面使用的自定义壁纸插件。
 
 把任意图片设为整个应用背后的背景，带实时预览的设置行、分组壁纸选择器、预设方案，以及随主题自动切换的纱帘颜色。
 
-![设置行截图](docs/settings-preview.webp)
+![设置行截图](https://raw.githubusercontent.com/caseclose/dsh-custom-wallpaper/main/docs/settings-preview.webp)
 
 *DeepSeek Harness「设置 → 通用设置」中的自定义壁纸，展示时使用了示例壁纸。*
 
 > ⚠️ **仓库不附带任何壁纸文件。** `assets/` 里唯一的图片是原创占位图
-> `assets/default.svg`。壁纸需要你自己放 —— 见[添加壁纸](#添加壁纸)。请勿把
+> `assets/default.svg`。壁纸需要你自己放 —— 见[添加壁纸](https://github.com/caseclose/dsh-custom-wallpaper/blob/main/README.md#添加壁纸)。请勿把
 > 受版权保护的游戏美术或下载的图库照片提交到公开仓库。
 > 上面的截图包含一张仅用于说明界面的示例壁纸，其权利归原作者所有，本仓库不
 > 分发该图片文件。
@@ -30,11 +30,17 @@
 
 ## 安装
 
-本插件**仅通过本 Git 仓库分发**，未发布到 npm。直接从 GitHub 安装（建议锁定
-commit：DSH 会在安装时执行 git 包的构建步骤，锁定可保证运行的代码不变）：
+已发布到 npm，包名为 [`dsh-wallpaper-custom`](https://www.npmjs.com/package/dsh-wallpaper-custom)：
 
 ```sh
-dsh plugin --profile web add github:caseclose/dsh-custom-wallpaper#8018ee4
+dsh plugin --profile web add dsh-wallpaper-custom
+```
+
+也可以直接从 GitHub 安装（建议锁定 commit：DSH 会在安装时执行 git 包的构建步骤，
+锁定可保证运行的代码不变）：
+
+```sh
+dsh plugin --profile web add github:caseclose/dsh-custom-wallpaper#<commit>
 ```
 
 或克隆后从本地目录安装：
@@ -44,8 +50,8 @@ git clone https://github.com/caseclose/dsh-custom-wallpaper.git
 dsh plugin --profile web add /path/to/dsh-custom-wallpaper
 ```
 
-想要更新的版本，把 `8018ee4` 换成 `git rev-parse HEAD` 的结果。之后刷新网页即可。
-在 **设置 → 通用 → 自定义壁纸** 中配置（或到 **设置 → 插件** 使用自动生成的
+把 `<commit>` 换成 `git rev-parse HEAD` 的结果即可。之后刷新网页，在
+**设置 → 通用 → 自定义壁纸** 中配置（或到 **设置 → 插件** 使用自动生成的
 完整表单）。
 
 ## 添加壁纸
@@ -85,7 +91,7 @@ npm pack --dry-run              # 检查包内容
 
 ## 版权
 
-- 插件代码：MIT，见 [LICENSE](LICENSE)。
+- 插件代码：MIT，见 [LICENSE](https://github.com/caseclose/dsh-custom-wallpaper/blob/main/LICENSE)。
 - `icon.svg` 与 `assets/default.svg`：本项目原创美术。
 - `docs/settings-preview.webp`：插件设置行截图，其中作为界面的一部分出现了一张
   示例壁纸（游戏美术）；权利归原作者，本仓库不分发该图片文件。

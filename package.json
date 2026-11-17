@@ -1,6 +1,6 @@
 {
   "name": "dsh-wallpaper-custom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Configurable custom wallpaper plugin for the DeepSeek Harness Web UI",
   "type": "module",
   "license": "MIT",
@@ -55,5 +55,13 @@
         "@deepseek-ai/dsh-client-ui-renderer"
       ]
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseclose/dsh-custom-wallpaper.git"
+  },
+  "homepage": "https://github.com/caseclose/dsh-custom-wallpaper#readme",
+  "bugs": {
+    "url": "https://github.com/caseclose/dsh-custom-wallpaper/issues"
   }
 }

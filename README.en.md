@@ -2,20 +2,20 @@
 
 [![CI](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml)
 
-[简体中文](README.md) | English
+[简体中文](https://github.com/caseclose/dsh-custom-wallpaper/blob/main/README.md) | English
 
 A configurable custom wallpaper plugin for the **DeepSeek Harness** Web UI.
 
 Set any image as the background behind the whole app, with a live-preview
 settings row, a grouped wallpaper picker, presets and per-theme veil colours.
 
-![Settings row preview](docs/settings-preview.webp)
+![Settings row preview](https://raw.githubusercontent.com/caseclose/dsh-custom-wallpaper/main/docs/settings-preview.webp)
 
 *Custom wallpaper in DeepSeek Harness → Settings → General, shown with a sample wallpaper.*
 
 > ⚠️ **No wallpaper files are bundled.** The only image shipped in `assets/` is
 > `assets/default.svg`, an original placeholder. You supply the wallpapers
-> yourself — see [Adding wallpapers](#adding-wallpapers). Do not commit
+> yourself — see [Adding wallpapers](https://github.com/caseclose/dsh-custom-wallpaper/blob/main/README.en.md#adding-wallpapers). Do not commit
 > copyrighted game art or downloaded stock photos to a public fork.
 > The screenshot above includes a sample wallpaper used only to illustrate the
 > UI; that artwork belongs to its respective rights holder and no such image
@@ -36,13 +36,17 @@ settings row, a grouped wallpaper picker, presets and per-theme veil colours.
 
 ## Install
 
-This plugin is distributed **from this Git repository only** — it is not
-published to npm. Install straight from GitHub (pin a commit; DSH runs a
-git-hosted bundle's build step at install time, so pinning keeps that code
-stable):
+Published on npm as [`dsh-wallpaper-custom`](https://www.npmjs.com/package/dsh-wallpaper-custom):
 
 ```sh
-dsh plugin --profile web add github:caseclose/dsh-custom-wallpaper#8018ee4
+dsh plugin --profile web add dsh-wallpaper-custom
+```
+
+You can also install straight from GitHub (pin a commit; DSH runs a git-hosted
+bundle's build step at install time, so pinning keeps that code stable):
+
+```sh
+dsh plugin --profile web add github:caseclose/dsh-custom-wallpaper#<commit>
 ```
 
 Or clone and install from a local directory:
@@ -52,10 +56,9 @@ git clone https://github.com/caseclose/dsh-custom-wallpaper.git
 dsh plugin --profile web add /path/to/dsh-custom-wallpaper
 ```
 
-Replace `8018ee4` with a newer `git rev-parse HEAD` value if you want a later
-revision. Then reload the Web page. Configure it in
-**Settings → General → Custom wallpaper** (or **Settings → Plugins** for the
-generated full form).
+Replace `<commit>` with the `git rev-parse HEAD` value you want. Then reload the
+Web page. Configure it in **Settings → General → Custom wallpaper** (or
+**Settings → Plugins** for the generated full form).
 
 ## Adding wallpapers
 
@@ -95,7 +98,7 @@ The Host half is `index.js` (Config schema), activated by `cordis.patch.yml`.
 
 ## Copyright
 
-- Plugin code: MIT, see [LICENSE](LICENSE).
+- Plugin code: MIT, see [LICENSE](https://github.com/caseclose/dsh-custom-wallpaper/blob/main/LICENSE).
 - `icon.svg` and `assets/default.svg`: original artwork for this project.
 - `docs/settings-preview.webp`: a screenshot of the plugin's settings row. It
   contains a sample wallpaper (game artwork) visible only as part of that UI
