@@ -3,7 +3,7 @@
    module loader. No Harness Client package is required — only React, which the
    shell seeds in the shared module table. */
 window.__ModuleLoader__.load({
-  id: 'dsh-custom-wallpaper',
+  id: 'dsh-wallpaper-custom',
   factory(require) {
     var React = require('react');
     var h = React.createElement;
@@ -34,7 +34,7 @@ window.__ModuleLoader__.load({
       if (cfg.imageSource === 'url' && cfg.imageUrl) return quote(String(cfg.imageUrl).replace(/["\\]/g, ''));
       var name = String(cfg.assetName || (ASSETS[0] && ASSETS[0].file) || 'default.svg').replace(/^\/+/, '');
       try {
-        return quote(new URL('plugins/dsh-custom-wallpaper/assets/' + encodeURIComponent(name), document.baseURI).href);
+        return quote(new URL('plugins/dsh-wallpaper-custom/assets/' + encodeURIComponent(name), document.baseURI).href);
       } catch (e) {
         return quote('');
       }

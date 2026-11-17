@@ -59,7 +59,7 @@ const checks = [
   ['light rule', /body:not\(\[data-ds-dark-theme\]\)/],
   ['dark rule', /body\[data-ds-dark-theme\]/],
   ['fixed size', /background-size: 1920px auto/],
-  ['library image URL', /plugins\/dsh-custom-wallpaper\/assets\//],
+  ['library image URL', /plugins\/dsh-wallpaper-custom\/assets\//],
   ['theme tokens', /--dsw-alias-bg-base: rgba\(/],
   ['veil', /linear-gradient\(180deg/],
   ['no placeholders', /^((?!__[A-Z_]+__).)*$/s],

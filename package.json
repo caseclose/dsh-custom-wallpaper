@@ -1,5 +1,5 @@
 {
-  "name": "dsh-custom-wallpaper",
+  "name": "dsh-wallpaper-custom",
   "version": "1.0.0",
   "description": "Configurable custom wallpaper plugin for the DeepSeek Harness Web UI",
   "type": "module",
@@ -29,7 +29,8 @@
     "tools",
     "wallpaper-catalog.example.json",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "docs/settings-preview.svg"
   ],
   "scripts": {
     "build": "python3 tools/build-client.py",

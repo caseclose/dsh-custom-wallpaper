@@ -15,7 +15,7 @@ first `-` (for example `nature-01.jpg` → group `Nature`). For custom labels an
 groups, copy `wallpaper-catalog.example.json` to `wallpaper-catalog.json` and
 edit it.
 
-Files are served by DSH at `plugins/dsh-custom-wallpaper/assets/<file name>`.
+Files are served by DSH at `plugins/dsh-wallpaper-custom/assets/<file name>`.
 
 > Do not commit copyrighted game art, stock photos, or downloaded wallpapers to
 > a public repository. See the top-level README for details.

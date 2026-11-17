@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10152e"/>
+      <stop offset="0.5" stop-color="#272b56"/>
+      <stop offset="1" stop-color="#4b3a6b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#9db4f0" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#9db4f0" stop-opacity="0"/>
+    </radialGradient>
+    <g id="flake" fill="none" stroke="#e2eaff" stroke-width="1.6" stroke-linecap="round">
+      <path d="M0 -18V18M-16 -9L16 9M-16 9L16 -9"/>
+      <path d="M0 -18l-4 5M0 -18l4 5M0 18l-4-5M0 18l4-5"/>
+    </g>
+  </defs>
+
+  <rect width="960" height="640" fill="#1b1c21"/>
+
+  <!-- header -->
+  <text x="40" y="52" fill="#f2f3f6" font-size="21" font-weight="600">Custom wallpaper</text>
+  <text x="40" y="76" fill="#9a9ca6" font-size="12.5">One shared image and one set of values; the veil adapts to the current theme.</text>
+  <rect x="806" y="34" width="114" height="30" rx="15" fill="#262832" stroke="#3a3c48"/>
+  <circle cx="824" cy="49" r="7" fill="#4f8cff"/>
+  <text x="839" y="54" fill="#e8e9ee" font-size="12">Enabled</text>
+  <line x1="40" y1="94" x2="920" y2="94" stroke="#303139"/>
+
+  <!-- preview card -->
+  <rect x="40" y="110" width="880" height="196" rx="12" fill="url(#sky)"/>
+  <rect x="40" y="110" width="880" height="196" rx="12" fill="url(#glow)"/>
+  <g opacity="0.42">
+    <use href="#flake" transform="translate(190 168) scale(1.4)"/>
+    <use href="#flake" transform="translate(760 152) scale(1.0)"/>
+    <use href="#flake" transform="translate(600 262) scale(1.7)"/>
+    <use href="#flake" transform="translate(320 270) scale(0.8)"/>
+  </g>
+  <g fill="#e8efff" opacity="0.6">
+    <circle cx="140" cy="140" r="1.6"/><circle cx="420" cy="132" r="1.3"/>
+    <circle cx="700" cy="128" r="1.7"/><circle cx="860" cy="210" r="1.4"/>
+    <circle cx="250" cy="240" r="1.5"/><circle cx="520" cy="228" r="1.2"/>
+  </g>
+  <rect x="62" y="234" width="128" height="40" rx="8" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-opacity="0.28"/>
+  <text x="76" y="259" fill="#f4f6ff" font-size="13">Aa  Preview</text>
+  <rect x="40" y="110" width="880" height="196" rx="12" fill="none" stroke="#3a3b44"/>
+
+  <!-- controls -->
+  <g font-size="12" fill="#9a9ca6">
+    <text x="40" y="336">Preset</text>
+    <text x="40" y="404">Image source</text>
+    <text x="40" y="472">Choose wallpaper</text>
+    <text x="40" y="540">Fit</text>
+    <text x="500" y="336">Wallpaper opacity (%)</text>
+    <text x="500" y="404">Readability scrim (%)</text>
+    <text x="500" y="472">Panel opacity (%)</text>
+    <text x="500" y="540">Wallpaper blur (px)</text>
+  </g>
+
+  <g fill="#24252b" stroke="#3a3b44">
+    <rect x="40" y="344" width="410" height="34" rx="7"/>
+    <rect x="40" y="412" width="410" height="34" rx="7"/>
+    <rect x="40" y="480" width="410" height="34" rx="7"/>
+    <rect x="40" y="548" width="410" height="34" rx="7"/>
+  </g>
+  <g fill="#e8e9ee" font-size="13">
+    <text x="54" y="366">Custom</text>
+    <text x="54" y="434">Local library</text>
+    <text x="54" y="502">Default</text>
+    <text x="54" y="570">Cover (crop)</text>
+  </g>
+  <g fill="#9a9ca6" font-size="14">
+    <text x="424" y="366">v</text><text x="424" y="434">v</text>
+    <text x="424" y="502">v</text><text x="424" y="570">v</text>
+  </g>
+
+  <!-- sliders -->
+  <g stroke="#3d3e47" stroke-width="5" stroke-linecap="round">
+    <line x1="500" y1="361" x2="920" y2="361"/>
+    <line x1="500" y1="429" x2="920" y2="429"/>
+    <line x1="500" y1="497" x2="920" y2="497"/>
+    <line x1="500" y1="565" x2="920" y2="565"/>
+  </g>
+  <g stroke="#f0f1f5" stroke-width="5" stroke-linecap="round">
+    <line x1="500" y1="361" x2="870" y2="361"/>
+    <line x1="500" y1="429" x2="574" y2="429"/>
+    <line x1="500" y1="497" x2="592" y2="497"/>
+    <line x1="500" y1="565" x2="500" y2="565"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="870" cy="361" r="9"/><circle cx="574" cy="429" r="9"/>
+    <circle cx="592" cy="497" r="9"/><circle cx="500" cy="565" r="9"/>
+  </g>
+
+  <!-- footer -->
+  <rect x="40" y="600" width="120" height="28" rx="7" fill="#24252b" stroke="#3a3b44"/>
+  <text x="56" y="619" fill="#e8e9ee" font-size="12">Reset preset</text>
+  <text x="500" y="619" fill="#7f818b" font-size="11.5">Illustrative preview — original artwork, no third-party images.</text>
+</svg>

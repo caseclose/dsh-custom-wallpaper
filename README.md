@@ -1,9 +1,15 @@
 # dsh-custom-wallpaper
 
+[![CI](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml/badge.svg)](https://github.com/caseclose/dsh-custom-wallpaper/actions/workflows/ci.yml)
+
 A configurable custom wallpaper plugin for the **DeepSeek Harness** Web UI.
 
 Set any image as the background behind the whole app, with a live-preview
 settings row, a grouped wallpaper picker, presets and per-theme veil colours.
+
+![Settings row preview](docs/settings-preview.svg)
+
+*Illustrative preview drawn for this project; no third-party images.*
 
 > ⚠️ **This repository contains no third-party artwork.** The only bundled
 > image is `assets/default.svg`, an original placeholder. You supply the
@@ -28,13 +34,13 @@ settings row, a grouped wallpaper picker, presets and per-theme veil colours.
 From npm (after publishing):
 
 ```sh
-dsh plugin --profile web add dsh-custom-wallpaper
+dsh plugin --profile web add dsh-wallpaper-custom
 ```
 
 From a local checkout:
 
 ```sh
-dsh plugin --profile web add /path/to/dsh-custom-wallpaper
+dsh plugin --profile web add /path/to/dsh-wallpaper-custom
 ```
 
 Then reload the Web page. Configure it in

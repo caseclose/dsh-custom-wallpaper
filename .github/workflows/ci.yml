@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Regenerate client bundle
+        run: python3 tools/build-client.py
+
+      - name: Generated client.js must match the committed file
+        run: git diff --exit-code client.js
+
+      - name: Syntax check
+        run: node --check client.js && node --check index.js
+
+      - name: Smoke test
+        run: node tools/smoke-test.cjs
+
+      - name: Inspect publishable tarball
+        run: npm pack --dry-run
